@@ -14,9 +14,9 @@ module StudentSite
       erb :'students/index'
     end
 
-    get '/students/:id' do
+    get '/students/:name' do
       # @students = Student.all
-      @student = Student.find_by_id(params[:id])
+      @student = Student.find_by_name(params[:name].gsub('-',' '))
       erb :'students/show'
     end
   end
