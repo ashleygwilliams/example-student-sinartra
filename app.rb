@@ -9,6 +9,10 @@ require_relative 'lib/models/student'
 module StudentSite
   class App < Sinatra::Base
 
+    get '/' do
+      redirect to('/students')
+    end
+
     get '/students' do
       @students = Student.all
       erb :'students/index'
